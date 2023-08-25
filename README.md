@@ -37,8 +37,8 @@
 - 기대효과
   > 유사 판례문을 통해 엄청난 양의 판례문들을 전부 뒤져보는 수고를 줄여 변호사 입장에서 시간, 금전적으로 경제적인 효과를 기대할 수 있고, 일반인 입장에서는 판례를 통해 각자의 상황이 어느정도 금액과 시간투자를 해야하는지에 대한 정보제공이 가능할 것입니다.
 - 활용 장비 및 재료
-  - 라이브러리 : tensorflow, OpenCV, sklearn 
-  - 개발 및 협업 툴 : python, colab notebook, vscode(windows), tensorboard  
+  - 라이브러리 : pytorch, sklearn 
+  - 개발 및 협업 툴 : python, colab notebook, vscode(windows), 
 
 ## 👀 데이터셋 
 
@@ -54,7 +54,6 @@
   3. 각 문장 조합쌍에 대해 SBERT에 통과시켜 문장 유사도를 Auto labeling하여 데이터셋을 구상했습니다.
   
 - 전체 문장 쌍 개수 : 약 125,000
-
 
 ### KLUE 데이터셋
 - 출처 : [KorNLI, KorSTS(카카오 브레인 깃허브)](https://github.com/kakaobrain/kor-nlu-datasets)
@@ -77,10 +76,10 @@
 | 한 여성이 고기를 요리하고 있다.<br />한 남자가 말하고 있다. | A woman is cooking meat.<br />A man is speaking.      | 0.0   |
 
 ## ⚙️ Modeling
-  
->- 여러 질병의 위험도를 각각 분석하기 위해 10개의 모델을 연결하는 pipeline을 구상
-><br>
->
+
+참고 깃허브 : https://github.com/jhgan00/ko-sentence-transformers
+
+
 >**[2023.03.15 ~ 2023.03.21]**
 >- 데이터 수집 및 전처리  
 >- 데이터의 사이즈가 중구난방으로 다름을 확인했고, 분류모델으로 ResNet Fine-Tuning을 생각하고 있었기 때문에 224x224로 resize
@@ -99,9 +98,8 @@
 ## 🔍 Conclusion
 
 ### Inference
-![Inference](doc/dogeye1.PNG)
-한장 또는 여러장의 강아지 눈사진을 이용자가 찍으면, 의심되는 질병을 알려준다.
 
+한장 또는 여러장의 강아지 눈사진을 이용자가 찍으면, 의심되는 질병을 알려준다.
 
 ### Conclusion & Extension
 1. Classification에 대표적인 ResNet을 transfer learning하여 안구판별기 모델을 학습시켜 동작함을 확인했다.
